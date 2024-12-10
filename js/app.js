@@ -1,12 +1,26 @@
-$(document).ready(function () {
-    $("#carousel").waterwheelCarousel({
-        startingItem: 1,          // Item inicial
-        separation: 200,         // Distância entre os itens
-        opacityMultiplier: 0.8,  // Redução de opacidade
-        flankingItems: 3,        // Quantidade de itens visíveis nas laterais
-        autoPlay: 3000,          // Rotação automática (ms)
-        speed: 500,              // Velocidade da transição
-        sizeMultiplier: 0.9,     // Escala do item central
-        edgeFadeEnabled: true    // Desvanece itens nas bordas
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 1; // Começa no índice 1
+    const items = document.querySelectorAll('.item');
+    const totalItems = items.length;
+    const carousel = document.getElementById('carousel');
+
+    // Atualizar a posição do carrossel
+    function updateCarouselPosition() {
+        // Define a propriedade CSS --position
+        carousel.style.setProperty('--position', currentIndex);
+    }
+
+    // Mover o carrossel
+    function moveCarousel(direction) {
+        // Atualizar o índice atual
+        currentIndex = (currentIndex + direction + totalItems - 1) % totalItems + 1;
+        updateCarouselPosition();
+    }
+
+    // Associa eventos aos botões de navegação
+    document.querySelector('.nav-button.left').addEventListener('click', () => moveCarousel(-1));
+    document.querySelector('.nav-button.right').addEventListener('click', () => moveCarousel(1));
+
+    // Inicializa a posição inicial
+    updateCarouselPosition();
 });
