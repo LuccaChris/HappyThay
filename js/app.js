@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let currentIndex = 1; // Começa no índice 1
+    let currentIndex = 3; // Começa no índice 1
     const items = document.querySelectorAll('.item');
     const totalItems = items.length;
     const carousel = document.getElementById('carousel');

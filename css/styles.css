@@ -90,6 +90,22 @@ main#carousel {
     --offset: 5;
 
   }
+  div.item:nth-of-type(6) {
+    --offset: 6;
+
+  }
+  div.item:nth-of-type(7) {
+    --offset: 7;
+
+  }
+  div.item:nth-of-type(8) {
+    --offset: 8;
+
+  }
+  div.item:nth-of-type(9) {
+    --offset: 9;
+
+  }
   
   .nav-button {
     position: absolute;
