@@ -1,8 +1,9 @@
 body {
     font-family: monospace, sans-serif;
-    background-color: #000000;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
+    
 }
 
 .container {
@@ -10,14 +11,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000;
+    background-image: url(/img/bk.);
 }
 
 .content {
     border-radius: 15px;
-    background-color: #000;
+    background-color: #14bde769;
     width: 95%;
-    height: 77%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,11 +26,9 @@ body {
     box-shadow: 0 0 100px rgba(253, 252, 252, 0.103);
     animation: shadowTransition 3s infinite alternate;
 }
-h1{
-  color: #fff;;
-}
-h3 {
-    color: aliceblue;
+h1, h3, p {
+  text-align: center; /* Centraliza os textos */
+  margin: 20px ;
 }
 
 img{
@@ -66,11 +65,12 @@ main#carousel {
     position: absolute;
     --r: calc(var(--position) - var(--offset));
     --abs: max(calc(var(--r) * -1), var(--r));
-    transition: all 0.25s linear;
+    transition: transform 0.5s ease, z-index 0.5s ease; /* Suavidade ao rotacionar */
     transform: rotateY(calc(-10deg * var(--r)))
       translateX(calc(-300px * var(--r)));
     z-index: calc((var(--position) - var(--abs)));
 }
+
   
   div.item:nth-of-type(1) {
     --offset: 1;
@@ -111,7 +111,8 @@ main#carousel {
   
   .nav-button {
     position: absolute;
-    top: 50%;
+    z-index: 15;
+    top: 20%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;

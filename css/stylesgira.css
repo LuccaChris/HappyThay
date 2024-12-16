@@ -1,0 +1,120 @@
+
+  .garden {
+    display: flex;
+    position: fixed; /* Agora fica fixo no rodapé */
+    bottom: 0; /* Posiciona as flores no rodapé */
+    left: 0;
+    right: 0;
+    justify-content: center; /* Centraliza as flores horizontalmente */
+    
+  }
+  
+  /* Talo do Girassol */
+  .stem {
+    width: 8px; /* Diminui a largura do talo */
+    height: 0;
+    background: green;
+    margin: 0 auto;
+    border-radius: 5px;
+    animation: grow 6s ease-in-out forwards; /* Diminui a duração da animação */
+  }
+  
+  /* Flor */
+  .flower {
+    position: relative;
+    width: 40px; /* Diminui o tamanho da flor */
+    height: 40px;
+    margin-top: -40px; /* Ajuste para cima */
+    margin-left: -15px; /* Centraliza no talo */
+    opacity: 0;
+    animation: bloom 2.5s ease-in-out forwards 2s; /* Diminui a duração e o delay */
+  }
+  
+  /* Pétalas */
+  .petal {
+    position: absolute;
+    width: 25px; /* Diminui o tamanho das pétalas */
+    height: 45px;
+    background: yellow;
+    border-radius: 100%;
+    transform-origin: center;
+    top: -110px;
+    left: 17px;
+  }
+  
+  /* Pétalas dispostas em círculo */
+  .petal:nth-child(1) { transform: rotate(0deg) translateY(-25px); }
+  .petal:nth-child(2) { transform: rotate(45deg) translateY(-25px); }
+  .petal:nth-child(3) { transform: rotate(90deg) translateY(-25px); }
+  .petal:nth-child(4) { transform: rotate(135deg) translateY(-25px); }
+  .petal:nth-child(5) { transform: rotate(180deg) translateY(-25px); }
+  .petal:nth-child(6) { transform: rotate(225deg) translateY(-25px); }
+  .petal:nth-child(7) { transform: rotate(270deg) translateY(-25px); }
+  .petal:nth-child(8) { transform: rotate(315deg) translateY(-25px); }
+  
+  /* Centro da Flor */
+  .center {
+    position: absolute;
+    width: 45px; /* Diminui o tamanho do centro da flor */
+    height: 45px;
+    background: brown;
+    border-radius: 50%;
+    top: -110px;
+    left: 7px;
+  }
+  
+  /* Animações */
+  @keyframes grow {
+    from {
+      height: 0;
+    }
+    to {
+      height: 120px; /* Diminui a altura do talo */
+    }
+  }
+  
+  @keyframes bloom {
+    from {
+      left: 9px;
+      opacity: 0.9;
+      transform: scale(0.1);
+    }
+    to {
+      left: 2px;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Posições individuais das flores */
+  .vr1 { left: -74%;top: 20px;;position: relative; }
+  .vr2 { left: -30%;top: 10px;position: relative; }
+  .vr3 { left: -54%;top: 92px;position: relative; }
+  .vr4 { left: 1%;top: 69px; position: relative; }
+  .vr5 { left: -9%;top: 74px; position: relative; }
+  .vr6 {left: -46%;top: 20px; position: relative; }
+  .vr7 {left: 10%;top: 60px; position: relative; }
+  .vr8 { left: 25%;top: 50px; position: relative; }
+  .vr9 { left: 10%;top: 60px; position: relative; }
+  .vr10 { left: 55%;top: 60px; position: relative; }
+  .vr11 { left: 16%;top: 50px; position: relative; }
+  .vr12 { left: -5%;top: 47px; position: relative; }
+  .vr13 { left: -5%;top: 19px; position: relative; }
+  .vr14 { left: -2%;top: 75px; position: relative; }
+  .vr15 { left: 45%; top: 80px;position: relative; }
+  .vr16 { left: 42%;top: 89px;position: relative; }
+  .vr17 { left: 96%;top: 20px;position: relative; }
+  
+  /* Media Queries para dispositivos móveis */
+  @media (max-width: 600px) {
+    body {
+      flex-direction: column; /* Organiza os girassóis em uma coluna */
+      align-items: center;
+    }
+  
+    .garden {
+      gap: 15px; /* Diminui o espaço entre as flores */
+    }
+  
+  }
+  
