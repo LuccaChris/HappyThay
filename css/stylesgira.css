@@ -1,5 +1,19 @@
+.hidden {
+    display: none;
+}
+
+.garden {
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Animação suave ao aparecer */
+}
+
+.garden.active {
+    opacity: 1;
+}
 
   .garden {
+    z-index: 1;
     display: flex;
     position: fixed; /* Agora fica fixo no rodapé */
     bottom: 0; /* Posiciona as flores no rodapé */

@@ -3,6 +3,7 @@ body {
     background-color: #ffffff;
     margin: 0;
     padding: 0;
+    background-image: url(/img/bk.png);
     
 }
 
@@ -10,13 +11,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-image: url(/img/bk.);
+    background-image: url(/img/bk.png);
 }
 
 .content {
     border-radius: 15px;
-    background-color: #14bde769;
+    background-color: #0d6fbea4;
     width: 95%;
     height: 100%;
     display: flex;
@@ -25,6 +25,8 @@ body {
     position: relative;
     box-shadow: 0 0 100px rgba(253, 252, 252, 0.103);
     animation: shadowTransition 3s infinite alternate;
+    margin-bottom: 150px;
+    z-index: 2;
 }
 h1, h3, p {
   text-align: center; /* Centraliza os textos */

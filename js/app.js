@@ -24,3 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa a posição inicial
     updateCarouselPosition();
 });
+/* garden*/
+document.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY; // Posição atual do scroll
+    const windowHeight = window.innerHeight; // Altura visível da janela
+    const fullHeight = document.documentElement.scrollHeight; // Altura total do documento
+
+    // Verifica se chegou ao final da página
+    if (scrollTop + windowHeight >= fullHeight - 10) {
+        const garden = document.querySelector(".garden");
+        garden.classList.add("active");
+        garden.classList.remove("hidden");
+    }
+});
