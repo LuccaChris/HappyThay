@@ -1,3 +1,201 @@
+body {
+    margin: 0;
+    background: #87ceeb; /* Céu azul */
+  }
+/* Container das Nuvens */
+.clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  /* Cada nuvem */
+  .cloud {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: moveClouds 10s linear infinite;
+    opacity: 0.9;
+  }
+  
+  /* Fluff (partes da nuvem) */
+  .fluff {
+    background: white;
+    border-radius: 50%;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+  }
+  
+  /* Tamanhos e posições para as partes da nuvem */
+  .cloud:nth-child(1) {
+    width: 150px;
+    height: 80px;
+    top: 30px;
+    left: 50%;
+    animation-delay: 0s;
+  }
+  .cloud:nth-child(1) .fluff:nth-child(1) {
+    width: 100px;
+    height: 60px;
+    top: -10px;
+    left: 10px;
+  }
+  .cloud:nth-child(1) .fluff:nth-child(2) {
+    width: 80px;
+    height: 50px;
+    top: 20px;
+    left: 40px;
+  }
+  .cloud:nth-child(1) .fluff:nth-child(3) {
+    width: 60px;
+    height: 40px;
+    top: 0px;
+    left: -20px;
+  }
+  
+  /* Mais nuvens com formatos diferentes */
+  .cloud:nth-child(2) {
+    width: 220px;
+    height: 120px;
+    top: 80px;
+    left: -20%;
+    animation-delay: 0s;
+  }
+  .cloud:nth-child(2) .fluff:nth-child(1) {
+    width: 120px;
+    height: 70px;
+    top: -10px;
+    left: 20px;
+  }
+  .cloud:nth-child(2) .fluff:nth-child(2) {
+    width: 100px;
+    height: 60px;
+    top: 10px;
+    left: 60px;
+  }
+  .cloud:nth-child(2) .fluff:nth-child(3) {
+    width: 80px;
+    height: 50px;
+    top: 30px;
+    left: 30px;
+  }
+  .cloud:nth-child(2) .fluff:nth-child(4) {
+    width: 70px;
+    height: 40px;
+    top: 10px;
+    left: -20px;
+  }
+  
+  .cloud:nth-child(3) {
+    width: 180px;
+    height: 100px;
+    top: 50px;
+    left: -30%;
+    animation-delay: 0s;
+  }
+  .cloud:nth-child(3) .fluff:nth-child(1) {
+    width: 110px;
+    height: 60px;
+    top: 0px;
+    left: 30px;
+  }
+  .cloud:nth-child(3) .fluff:nth-child(2) {
+    width: 90px;
+    height: 50px;
+    top: 10px;
+    left: 60px;
+  }
+  .cloud:nth-child(3) .fluff:nth-child(3) {
+    width: 70px;
+    height: 40px;
+    top: 20px;
+    left: 10px;
+  }
+  .cloud:nth-child(3) .fluff:nth-child(4) {
+    width: 60px;
+    height: 30px;
+    top: 5px;
+    left: -10px;
+  }
+  .cloud:nth-child(3) .fluff:nth-child(5) {
+    width: 50px;
+    height: 25px;
+    top: 15px;
+    left: -30px;
+  }
+  .lower-cloud:nth-child(4) {
+    width: 180px;
+    height: 100px;
+    top: 210px; /* Mais para baixo */
+    left: -10%;
+    animation-delay: 0s;
+  }
+  .lower-cloud:nth-child(4) .fluff:nth-child(1) {
+    width: 110px;
+    height: 70px;
+    top: -10px;
+    left: 20px;
+  }
+  .lower-cloud:nth-child(4) .fluff:nth-child(2) {
+    width: 90px;
+    height: 50px;
+    top: 15px;
+    left: 50px;
+  }
+  .lower-cloud:nth-child(4) .fluff:nth-child(3) {
+    width: 70px;
+    height: 40px;
+    top: 10px;
+    left: -10px;
+  }
+  
+  .lower-cloud:nth-child(5) {
+    width: 220px;
+    height: 120px;
+    top: 250px; /* Ainda mais para baixo */
+    left: -20%;
+    animation-delay: 0s;
+  }
+  .lower-cloud:nth-child(5) .fluff:nth-child(1) {
+    width: 140px;
+    height: 80px;
+    top: -10px;
+    left: 10px;
+  }
+  .lower-cloud:nth-child(5) .fluff:nth-child(2) {
+    width: 110px;
+    height: 70px;
+    top: 10px;
+    left: 50px;
+  }
+  .lower-cloud:nth-child(5) .fluff:nth-child(3) {
+    width: 90px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+  }
+  .lower-cloud:nth-child(5) .fluff:nth-child(4) {
+    width: 80px;
+    height: 50px;
+    top: 5px;
+    left: -30px;
+  }
+  
+  
+  /* Animação para mover as nuvens */
+  @keyframes moveClouds {
+    from {
+      transform: translateX(-300%);
+    }
+    to {
+      transform: translateX(325%);
+    }
+  }
 .hidden {
     display: none;
 }
