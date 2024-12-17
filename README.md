@@ -1,1 +1,1 @@
-https://luccachris.github.io/nvcard/
+https://luccachris.github.io/HappyThay/
