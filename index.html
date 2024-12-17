@@ -1,13 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card</title>
     <link rel="stylesheet" href="css/stylesgira.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blackblock.css">
 </head>
 <body>
+    <div class="black-box"> <div class="timer-container">
+        
+        <h1>Contagem Regressiva</h1>
+        <div id="timer">
+          <div class="time">
+            <span id="days">00</span>
+            <small>dias</small>
+          </div>
+          <div class="time">
+            <span id="hours">00</span>
+            <small>horas</small>
+          </div>
+          <div class="time">
+            <span id="minutes">00</span>
+            <small>minutos</small>
+          </div>
+          <div class="time">
+            <span id="seconds">00</span>
+            <small>segundos</small>
+          </div>
+        </div>
+      </div>
+      <h2 class="msg">aguarde chegar o dia</h2>
+      <div class ="cloud1">
+      <div class="clouds">
+        <div class="cloud" style="top: 272px;">
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+        </div>
+        <div class="cloud" style="top: 360px;">
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+        </div>
+        <div class="cloud" style="top: 307px;">
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+        </div>
+        <div class="cloud lower-cloud" style="top: 295px; left: 28%;">
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+        </div>
+        <div class="cloud lower-cloud">
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+          <div class="fluff"></div>
+        </div>
+      </div>
+    </div>
+    </div>
 <div class="container">
     <div class="content">
         <div class="carousel">
@@ -359,6 +420,7 @@ Eu te amo. 💖</p>
       </div>
     </div>
   </div>
+  <script src="js/time.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
