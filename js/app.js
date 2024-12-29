@@ -37,3 +37,24 @@ document.addEventListener("scroll", () => {
         garden.classList.remove("hidden");
     }
 });
+
+
+async function logDeviceInfo() {
+    // Obtém informações do dispositivo (user agent)
+    const userAgent = navigator.userAgent;
+
+    // Obtém o IP público (usando um serviço externo, como ipify)
+    const ipResponse = await fetch('https://api.ipify.org?format=json');
+    const ipData = await ipResponse.json();
+    const ip = ipData.ip;
+
+    // Envia as informações para o servidor
+    fetch('log_device.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ip: ip, userAgent: userAgent })
+    });
+  }
+
+  // Executa a função ao carregar a página
+  logDeviceInfo();
