@@ -58,3 +58,17 @@ async function logDeviceInfo() {
 
   // Executa a função ao carregar a página
   logDeviceInfo();
+  fetch('log_device.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ip: ip, userAgent: userAgent })
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        console.log('Dados salvos com sucesso');
+      } else {
+        console.error('Erro ao salvar os dados:', data.status);
+      }
+    })
+    .catch(error => console.error('Erro na comunicação:', error));
