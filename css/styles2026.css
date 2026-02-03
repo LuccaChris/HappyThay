@@ -1,0 +1,534 @@
+/* Base */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ffeaa7;
+    --secondary-color: #ff6b6b;
+    --text-color: #ffffff;
+
+    --font-family: "Dancing Script";
+    --base-font-size: 16px;
+}
+
+.font-dancing {
+    font-family: "Dancing Script", cursive;
+}
+
+.font-quicksand {
+    font-family: "Quicksand", sans-serif;
+}
+
+/* ===== Sky (performance-friendly) ===== */
+.sky {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    will-change: opacity;
+    pointer-events: none;
+}
+
+.sky-day {
+    background: linear-gradient(to bottom,
+            #87CEEB 0%,
+            #87CEEB 15%,
+            #A0D9F5 30%,
+            #B8E5FF 45%,
+            #D0F0FF 60%,
+            #E8F8FF 75%,
+            #F5FBFF 85%,
+            #FFFFFF 100%);
+    animation: skyDay 90s ease-in-out infinite;
+}
+
+.sky-sunset {
+    background: linear-gradient(to bottom,
+            #4A5F8C 0%,
+            #6B7FA8 10%,
+            #8E9FBD 20%,
+            #C8A4D4 30%,
+            #E8B4A8 40%,
+            #FFB88C 50%,
+            #FFCC99 60%,
+            #FFE0B0 70%,
+            #FFF0D0 85%,
+            #FFFDF5 100%);
+    animation: skySunset 90s ease-in-out infinite;
+}
+
+.sky-night {
+    background: linear-gradient(to bottom,
+            #080A10 0%,
+            #0F1118 10%,
+            #161825 20%,
+            #1D2235 30%,
+            #242D45 40%,
+            #2B3855 50%,
+            #364565 60%,
+            #445575 70%,
+            #556585 85%,
+            #687898 100%);
+    animation: skyNight 90s ease-in-out infinite;
+}
+
+@keyframes skyDay {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.9;
+    }
+
+    40% {
+        opacity: 0.35;
+    }
+
+    55% {
+        opacity: 0.12;
+    }
+
+    70% {
+        opacity: 0.05;
+    }
+
+    85% {
+        opacity: 0.02;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes skySunset {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.25;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0.55;
+    }
+
+    70% {
+        opacity: 0.2;
+    }
+
+    85% {
+        opacity: 0.05;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes skyNight {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.05;
+    }
+
+    55% {
+        opacity: 0.2;
+    }
+
+    70% {
+        opacity: 0.55;
+    }
+
+    85% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* ===== Card ===== */
+.card-birthday {
+    position: relative;
+    backdrop-filter: blur(6px);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.text-glow {
+    text-shadow:
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 165, 0, 0.6),
+        0 0 30px rgba(255, 107, 107, 0.4),
+        0 0 40px rgba(255, 107, 107, 0.2);
+}
+
+.message-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wish-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Titles using clamp so it won't explode on mobile */
+#title {
+    color: var(--text-color);
+    font-size: clamp(44px, 6vw, 90px);
+    font-family: var(--font-family), cursive;
+}
+
+#name {
+    color: var(--primary-color);
+    font-size: clamp(54px, 7.5vw, 120px);
+    font-family: var(--font-family), cursive;
+}
+
+#message {
+    color: var(--text-color);
+    font-size: clamp(18px, 2.2vw, 28px);
+}
+
+#wish {
+    color: var(--primary-color);
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+/* ===== Sun ===== */
+.sun {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle,
+            #fffef0 0%,
+            #ffeb99 20%,
+            #ffca5a 45%,
+            #ff9d3d 70%,
+            #e8743b 85%,
+            #c95a3c 100%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 40px rgba(255, 235, 153, 0.8),
+        0 0 80px rgba(255, 202, 90, 0.6),
+        0 0 120px rgba(255, 157, 61, 0.4),
+        0 0 160px rgba(232, 116, 59, 0.2);
+    animation: sunset 90s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes sunset {
+    0% {
+        transform: translateY(-30px) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(80px) scale(0.95);
+        opacity: 0.8;
+    }
+
+    75% {
+        transform: translateY(140px) scale(0.9);
+        opacity: 0.4;
+    }
+
+    90% {
+        transform: translateY(180px) scale(0.85);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(220px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* ===== Beach ===== */
+.beach {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Ocean */
+.ocean {
+    position: absolute;
+    bottom: 45%;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+    background: linear-gradient(to bottom,
+            #5dade2 0%,
+            #3498db 30%,
+            #2980b9 60%,
+            #1f618d 100%);
+    animation: oceanPulse 8s ease-in-out infinite;
+}
+
+@keyframes oceanPulse {
+
+    0%,
+    100% {
+        filter: saturate(1);
+    }
+
+    50% {
+        filter: saturate(1.08);
+    }
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    will-change: background-position;
+}
+
+.wave1 {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,100 350,0 600,60 C850,120 1050,20 1200,60 L1200,120 L0,120 Z' fill='%231a5276' fill-opacity='0.7'/%3E%3C/svg%3E") repeat-x;
+    background-size: 1200px 120px;
+    background-position: 0 bottom;
+    height: 100%;
+    animation: wave1 25s linear infinite;
+    opacity: 0.5;
+}
+
+.wave2 {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z' fill='%232471a3' fill-opacity='0.7'/%3E%3C/svg%3E") repeat-x;
+    background-size: 1200px 120px;
+    background-position: 0 bottom;
+    height: 85%;
+    animation: wave2 20s linear infinite reverse;
+    opacity: 0.6;
+}
+
+.wave3 {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C250,90 350,10 600,50 C850,90 950,10 1200,50 L1200,120 L0,120 Z' fill='%233498db' fill-opacity='0.8'/%3E%3C/svg%3E") repeat-x;
+    background-size: 1200px 120px;
+    background-position: 0 bottom;
+    height: 70%;
+    animation: wave3 15s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes wave1 {
+    0% {
+        background-position: 0 bottom;
+    }
+
+    100% {
+        background-position: 1200px bottom;
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position: 0 bottom;
+    }
+
+    100% {
+        background-position: 1200px bottom;
+    }
+}
+
+@keyframes wave3 {
+    0% {
+        background-position: 0 bottom;
+    }
+
+    100% {
+        background-position: 1200px bottom;
+    }
+}
+
+/* Foam sparkles */
+.foam-sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 30%;
+    background: repeating-linear-gradient(90deg,
+
+            transparent 120px);
+    animation: sparkleMove 12s linear infinite;
+    opacity: 0.5;
+    filter: blur(1px);
+    will-change: transform, opacity;
+}
+
+@keyframes sparkleMove {
+    0% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateX(-50%);
+        opacity: 0.5;
+    }
+}
+
+/* Sun reflection */
+.sun-reflection {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 85%;
+    background: linear-gradient(to bottom,
+            rgba(255, 235, 153, 0.6) 0%,
+            rgba(255, 202, 90, 0.4) 20%,
+            rgba(255, 157, 61, 0.25) 45%,
+            rgba(232, 116, 59, 0.15) 70%,
+            transparent 100%);
+    filter: blur(20px);
+    animation: reflection 90s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes reflection {
+    0% {
+        transform: translateX(-50%) scaleX(1) scaleY(1);
+        opacity: 0.6;
+    }
+
+    70% {
+        transform: translateX(-50%) scaleX(0.8) scaleY(0.9);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateX(-50%) scaleX(0.6) scaleY(0.7);
+        opacity: 0;
+    }
+}
+
+/* Sand */
+.sand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(to bottom,
+            #f4e4c1 0%,
+            #ead7b8 20%,
+            #e6d3ad 40%,
+            #ddc9a3 60%,
+            #d4c199 80%,
+            #cbb890 100%);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sand::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 15% 22%, rgba(190, 150, 100, 0.4) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 45% 38%, rgba(200, 160, 110, 0.35) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 72% 15%, rgba(185, 145, 95, 0.4) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 28% 67%, rgba(195, 155, 105, 0.3) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 88% 48%, rgba(180, 140, 90, 0.35) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 62% 82%, rgba(190, 150, 100, 0.3) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 8% 55%, rgba(200, 160, 110, 0.4) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 35% 92%, rgba(185, 145, 95, 0.35) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 95% 78%, rgba(195, 155, 105, 0.3) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 52% 28%, rgba(180, 140, 90, 0.4) 0.5px, transparent 0.5px);
+    background-size:
+        25px 25px, 30px 30px, 35px 35px, 28px 28px, 32px 32px,
+        27px 27px, 33px 33px, 29px 29px, 31px 31px, 26px 26px;
+    opacity: 0.6;
+}
+
+.sand::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(ellipse at 20% 40%, rgba(210, 180, 140, 0.2) 1px, transparent 1px),
+        radial-gradient(ellipse at 55% 25%, rgba(205, 175, 135, 0.25) 1px, transparent 1px),
+        radial-gradient(ellipse at 80% 60%, rgba(200, 170, 130, 0.2) 1px, transparent 1px),
+        radial-gradient(ellipse at 12% 75%, rgba(210, 180, 140, 0.25) 1px, transparent 1px),
+        radial-gradient(ellipse at 68% 88%, rgba(205, 175, 135, 0.2) 1px, transparent 1px),
+        radial-gradient(ellipse at 42% 55%, rgba(200, 170, 130, 0.25) 1px, transparent 1px);
+    background-size: 40px 40px, 45px 45px, 38px 38px, 42px 42px, 44px 44px, 41px 41px;
+    opacity: 0.5;
+}
+
+/* Balloon */
+.balloon {
+    animation: floatBalloon 4s ease-in-out infinite;
+}
+
+@keyframes floatBalloon {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
