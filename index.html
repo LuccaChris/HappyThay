@@ -11,58 +11,115 @@
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="/css/styles2026.css" />
+    <link rel="stylesheet" href="./css/styles2026.css" />
 </head>
 
 <body class="h-full font-quicksand">
-    <div id="app" class="h-full w-full relative overflow-hidden">
+    <div id="app" class="h-full w-full relative overflow-hidden flex flex-col">
 
-        <!-- SKY -->
-        <div class="sky sky-day"></div>
-        <div class="sky sky-sunset"></div>
-        <div class="sky sky-night"></div>
+        <!-- Sky layers -->
+        <div class="sky sky-day" aria-hidden="true"></div>
+        <div class="sky sky-sunset" aria-hidden="true"></div>
+        <div class="sky sky-night" aria-hidden="true"></div>
 
-        <!-- CONTENT -->
-        <main class="relative z-20 flex h-full items-center justify-center px-4">
-            <section class="card-birthday text-center">
-                <div class="text-6xl mb-4 animate-bounce">🎂</div>
+        <!-- Stars -->
+        <div class="absolute top-0 left-0 w-full h-1/3 pointer-events-none z-10">
+            <div class="star" style="width: 3px; height: 3px; top: 5%; left: 10%; animation-delay: 0s;"></div>
+            <div class="star" style="width: 2px; height: 2px; top: 8%; left: 25%; animation-delay: 0.5s;"></div>
+            <div class="star" style="width: 4px; height: 4px; top: 3%; left: 40%; animation-delay: 1s;"></div>
+            <div class="star" style="width: 2px; height: 2px; top: 10%; left: 55%; animation-delay: 1.5s;"></div>
+            <div class="star" style="width: 3px; height: 3px; top: 6%; left: 70%; animation-delay: 0.3s;"></div>
+            <div class="star" style="width: 2px; height: 2px; top: 4%; left: 85%; animation-delay: 0.8s;"></div>
+            <div class="star" style="width: 3px; height: 3px; top: 12%; left: 15%; animation-delay: 1.2s;"></div>
+            <div class="star" style="width: 2px; height: 2px; top: 7%; left: 92%; animation-delay: 0.6s;"></div>
+        </div>
 
-                <h1 id="title" class="font-dancing text-glow mb-4">
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col items-center justify-center relative z-20 px-4 pb-32">
+
+            <!-- Balloons -->
+            <div class="absolute top-10 left-8 balloon" style="animation-delay: 0s;">
+                <svg width="40" height="60" viewBox="0 0 40 60" aria-hidden="true">
+                    <ellipse cx="20" cy="20" rx="18" ry="22" fill="#ff6b6b" />
+                    <path d="M20 42 Q20 50 18 58" stroke="#666" stroke-width="1" fill="none" />
+                    <polygon points="17,42 23,42 20,48" fill="#ff6b6b" />
+                </svg>
+            </div>
+
+            <div class="absolute top-8 right-10 balloon" style="animation-delay: 0.5s;">
+                <svg width="35" height="55" viewBox="0 0 40 60" aria-hidden="true">
+                    <ellipse cx="20" cy="20" rx="18" ry="22" fill="#feca57" />
+                    <path d="M20 42 Q20 50 22 58" stroke="#666" stroke-width="1" fill="none" />
+                    <polygon points="17,42 23,42 20,48" fill="#feca57" />
+                </svg>
+            </div>
+
+            <div class="absolute top-16 left-20 balloon" style="animation-delay: 1s;">
+                <svg width="30" height="50" viewBox="0 0 40 60" aria-hidden="true">
+                    <ellipse cx="20" cy="20" rx="18" ry="22" fill="#ff9ff3" />
+                    <path d="M20 42 Q20 50 19 58" stroke="#666" stroke-width="1" fill="none" />
+                    <polygon points="17,42 23,42 20,48" fill="#ff9ff3" />
+                </svg>
+            </div>
+
+            <div class="absolute top-12 right-24 balloon" style="animation-delay: 1.5s;">
+                <svg width="35" height="55" viewBox="0 0 40 60" aria-hidden="true">
+                    <ellipse cx="20" cy="20" rx="18" ry="22" fill="#a29bfe" />
+                    <path d="M20 42 Q20 50 21 58" stroke="#666" stroke-width="1" fill="none" />
+                    <polygon points="17,42 23,42 20,48" fill="#a29bfe" />
+                </svg>
+            </div>
+
+            <!-- Card -->
+            <section class="card-birthday" aria-label="Cartão de aniversário">
+                <div class="text-6xl mb-4 animate-bounce text-center" aria-hidden="true">🎂</div>
+
+                <h1 id="title" class="font-dancing text-glow text-center mb-4">
                     Feliz Aniversário!
                 </h1>
 
-                <h2 id="name" class="font-dancing text-glow mb-6">
+                <h2 id="name" class="font-dancing text-glow text-center mb-6">
                     Thay
                 </h2>
 
-                <p id="message" class="mb-4">
-                    Que este dia seja tão especial e radiante quanto você ✨
+                <p id="message" class="text-center max-w-lg mx-auto mb-6 message-shadow">
+                    Que este dia seja tão especial e radiante quanto você! ✨
                 </p>
 
-                <p id="wish" class="italic">
-                    Muita paz, amor e felicidade sempre 💫
+                <p id="wish" class="text-center max-w-md mx-auto italic wish-shadow">
+                    Muita paz, amor e felicidade sempre! 💫
                 </p>
+
+                <div class="flex gap-4 mt-6 text-3xl justify-center" aria-hidden="true">
+                    <span class="animate-pulse">🎉</span>
+                    <span class="animate-pulse" style="animation-delay: 0.2s;">🎈</span>
+                    <span class="animate-pulse" style="animation-delay: 0.4s;">🎁</span>
+                    <span class="animate-pulse" style="animation-delay: 0.6s;">🥳</span>
+                    <span class="animate-pulse" style="animation-delay: 0.8s;">🎊</span>
+                </div>
             </section>
         </main>
 
-        <!-- SUN (ATRÁS DO MAR) -->
-        <div class="sun-wrapper">
+        <!-- ✅ Sun wrapper (sem z do Tailwind) -->
+        <div class="sun-wrapper" aria-hidden="true">
             <div class="sun"></div>
         </div>
 
-        <!-- BEACH -->
-        <footer class="beach">
+        <!-- Beach -->
+        <footer class="beach" aria-hidden="true">
             <div class="ocean">
                 <div class="sun-reflection"></div>
+                <div class="foam-sparkles"></div>
+
                 <div class="wave wave1"></div>
                 <div class="wave wave2"></div>
                 <div class="wave wave3"></div>
             </div>
+
             <div class="sand"></div>
         </footer>
 
     </div>
-    <script src="/js/app2026.js"></script>
 </body>
 
 </html>
