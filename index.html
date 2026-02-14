@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feliz Aniversário Thayna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Feliz Aniversário Thayná</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="./css/styles2026.css" />
 </head>
 
-<body class="h-full font-quicksand">
-    <div id="app" class="h-full w-full relative overflow-hidden flex flex-col">
+<body class="min-h-screen overflow-x-hidden font-quicksand">
+    <div id="app" class="min-h-screen w-full relative overflow-hidden flex flex-col">
 
         <!-- Sky layers -->
         <div class="sky sky-day" aria-hidden="true"></div>
@@ -23,7 +23,7 @@
         <div class="sky sky-night" aria-hidden="true"></div>
 
         <!-- Stars -->
-        <div class="absolute top-0 left-0 w-full h-1/3 pointer-events-none z-10">
+        <div class="absolute top-0 left-0 w-full h-1/3 pointer-events-none z-10" aria-hidden="true">
             <div class="star" style="width: 3px; height: 3px; top: 5%; left: 10%; animation-delay: 0s;"></div>
             <div class="star" style="width: 2px; height: 2px; top: 8%; left: 25%; animation-delay: 0.5s;"></div>
             <div class="star" style="width: 4px; height: 4px; top: 3%; left: 40%; animation-delay: 1s;"></div>
@@ -38,32 +38,32 @@
         <main class="flex-1 flex flex-col items-center justify-center relative z-20 px-4 pb-32">
 
             <!-- Balloons -->
-            <div class="absolute top-10 left-8 balloon" style="animation-delay: 0s;">
-                <svg width="40" height="60" viewBox="0 0 40 60" aria-hidden="true">
+            <div class="absolute top-10 left-8 balloon" style="animation-delay: 0s;" aria-hidden="true">
+                <svg width="40" height="60" viewBox="0 0 40 60">
                     <ellipse cx="20" cy="20" rx="18" ry="22" fill="#ff6b6b" />
                     <path d="M20 42 Q20 50 18 58" stroke="#666" stroke-width="1" fill="none" />
                     <polygon points="17,42 23,42 20,48" fill="#ff6b6b" />
                 </svg>
             </div>
 
-            <div class="absolute top-8 right-10 balloon" style="animation-delay: 0.5s;">
-                <svg width="35" height="55" viewBox="0 0 40 60" aria-hidden="true">
+            <div class="absolute top-8 right-10 balloon" style="animation-delay: 0.5s;" aria-hidden="true">
+                <svg width="35" height="55" viewBox="0 0 40 60">
                     <ellipse cx="20" cy="20" rx="18" ry="22" fill="#feca57" />
                     <path d="M20 42 Q20 50 22 58" stroke="#666" stroke-width="1" fill="none" />
                     <polygon points="17,42 23,42 20,48" fill="#feca57" />
                 </svg>
             </div>
 
-            <div class="absolute top-16 left-20 balloon" style="animation-delay: 1s;">
-                <svg width="30" height="50" viewBox="0 0 40 60" aria-hidden="true">
+            <div class="absolute top-16 left-20 balloon" style="animation-delay: 1s;" aria-hidden="true">
+                <svg width="30" height="50" viewBox="0 0 40 60">
                     <ellipse cx="20" cy="20" rx="18" ry="22" fill="#ff9ff3" />
                     <path d="M20 42 Q20 50 19 58" stroke="#666" stroke-width="1" fill="none" />
                     <polygon points="17,42 23,42 20,48" fill="#ff9ff3" />
                 </svg>
             </div>
 
-            <div class="absolute top-12 right-24 balloon" style="animation-delay: 1.5s;">
-                <svg width="35" height="55" viewBox="0 0 40 60" aria-hidden="true">
+            <div class="absolute top-12 right-24 balloon" style="animation-delay: 1.5s;" aria-hidden="true">
+                <svg width="35" height="55" viewBox="0 0 40 60">
                     <ellipse cx="20" cy="20" rx="18" ry="22" fill="#a29bfe" />
                     <path d="M20 42 Q20 50 21 58" stroke="#666" stroke-width="1" fill="none" />
                     <polygon points="17,42 23,42 20,48" fill="#a29bfe" />
@@ -74,33 +74,46 @@
             <section class="card-birthday" aria-label="Cartão de aniversário">
                 <div class="text-6xl mb-4 animate-bounce text-center" aria-hidden="true">🎂</div>
 
-                <h1 id="title" class="font-dancing text-glow text-center mb-4">
+                <h1 id="title" class="font-dancing text-glow text-center mb-4 text-4xl sm:text-5xl">
                     Feliz Aniversário!
                 </h1>
 
-                <h2 id="name" class="font-dancing text-glow text-center mb-6">
+                <h2 id="name" class="font-dancing text-glow text-center mb-6 text-4xl sm:text-5xl">
                     Thay
                 </h2>
 
-                <p id="message" class="text-center max-w-lg mx-auto mb-6 message-shadow">
-                    Que este dia seja tão especial e radiante quanto você! ✨
+                <p id="message" class="text-center max-w-lg mx-auto mb-6 message-shadow leading-relaxed">
+                    Que este dia seja tão especial e radiante na mesma intensidade que você é.<br><br>
+
+                    Espero que aproveite cada momento do seu dia.<br><br>
+
+                    Te desejo tudo de melhor. Que seus sonhos e desejos continuem se realizando,
+                    e que você siga conquistando as pessoas com esse jeito único —
+                    seja como a Dra. Thayná dedicada ou como a Thayná radiante que você é.<br><br>
+
+                    Estando perto ou longe, sempre estarei aqui torcendo por você todos os dias.<br><br>
+
+                    Que Deus ilumine sempre o seu caminho, como eu sei que Ele já faz.<br>
+                    Que Ele abençoe seus planos, suas decisões, seu trabalho e todo o seu caminhar.<br><br>
+
+                    Você tem um lugar especial no meu coração.<br>
+                    Eu te admiro muito.<br><br>
+
+                    Aproveita o seu dia, porque ele é só seu.<br><br>
+
+                    <strong>Feliz vida, Thay — por este e por todos os próximos anos. 💙🤍</strong>
                 </p>
 
-                <p id="wish" class="text-center max-w-md mx-auto italic wish-shadow">
-                    Muita paz, amor e felicidade sempre! 💫
-                </p>
+
 
                 <div class="flex gap-4 mt-6 text-3xl justify-center" aria-hidden="true">
                     <span class="animate-pulse">🎉</span>
-                    <span class="animate-pulse" style="animation-delay: 0.2s;">🎈</span>
-                    <span class="animate-pulse" style="animation-delay: 0.4s;">🎁</span>
-                    <span class="animate-pulse" style="animation-delay: 0.6s;">🥳</span>
-                    <span class="animate-pulse" style="animation-delay: 0.8s;">🎊</span>
+
                 </div>
             </section>
         </main>
 
-        <!-- ✅ Sun wrapper (sem z do Tailwind) -->
+        <!-- Sun wrapper -->
         <div class="sun-wrapper" aria-hidden="true">
             <div class="sun"></div>
         </div>
